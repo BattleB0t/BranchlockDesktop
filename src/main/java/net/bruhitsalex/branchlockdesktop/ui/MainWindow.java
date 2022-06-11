@@ -39,6 +39,7 @@ public class MainWindow extends JFrame {
 
         JSplitPane splitPane = new JSplitPane();
         splitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
+        splitPane.setResizeWeight(0.15);
 
         proccessingPane = new ProcessingPane();
         splitPane.setLeftComponent(proccessingPane);

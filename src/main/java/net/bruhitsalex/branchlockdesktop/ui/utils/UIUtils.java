@@ -12,4 +12,18 @@ public class UIUtils {
         frame.setLocation(x, y);
     }
 
+    public static void expandAllNodes(JTree tree){
+        expandAllNodes(tree, 0, tree.getRowCount());
+    }
+
+    public static void expandAllNodes(JTree tree, int startingIndex, int rowCount){
+        for (int i = startingIndex; i < rowCount; ++i){
+            tree.expandRow(i);
+        }
+
+        if (tree.getRowCount() != rowCount){
+            expandAllNodes(tree, rowCount, tree.getRowCount());
+        }
+    }
+
 }

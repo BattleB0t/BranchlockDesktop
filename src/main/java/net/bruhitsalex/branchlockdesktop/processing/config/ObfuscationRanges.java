@@ -3,11 +3,13 @@ package net.bruhitsalex.branchlockdesktop.processing.config;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.List;
+
 @AllArgsConstructor
 @Data
-public class Trimmer {
+public class ObfuscationRanges {
 
-    private boolean enabled;
-    private boolean removeMethodsEntirely;
+    private List<String> exclusions;
+    private List<String> inclusions;
 
 }

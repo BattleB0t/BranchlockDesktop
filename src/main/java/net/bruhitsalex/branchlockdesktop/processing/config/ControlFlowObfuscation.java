@@ -5,9 +5,9 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
-public class Trimmer {
+public class ControlFlowObfuscation {
 
     private boolean enabled;
-    private boolean removeMethodsEntirely;
+    private boolean heavy;
 
 }

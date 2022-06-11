@@ -7,7 +7,10 @@ import lombok.Data;
 @Data
 public class Config {
 
-    public Trimmer trimmer;
-    public StacktraceEncryption stacktraceEncryption;
+    // oop hell
+
+    private GlobalSettings globalSettings;
+    private Tasks tasks;
+    private ObfuscationRanges obfuscationRanges;
 
 }

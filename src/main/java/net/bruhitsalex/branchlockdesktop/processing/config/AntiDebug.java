@@ -5,9 +5,9 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
-public class Trimmer {
+public class AntiDebug {
 
     private boolean enabled;
-    private boolean removeMethodsEntirely;
+    private boolean checkNoverify;
 
 }

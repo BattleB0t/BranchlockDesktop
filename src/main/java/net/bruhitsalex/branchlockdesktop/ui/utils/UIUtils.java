@@ -1,4 +1,4 @@
-package net.bruhitsalex.branchlockdesktop.ui;
+package net.bruhitsalex.branchlockdesktop.ui.utils;
 
 import javax.swing.*;
 import java.awt.*;

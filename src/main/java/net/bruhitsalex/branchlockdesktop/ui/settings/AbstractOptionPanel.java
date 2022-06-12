@@ -4,21 +4,25 @@ import net.bruhitsalex.branchlockdesktop.processing.Processing;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public abstract class AbstractOptionPanel extends JPanel {
+
+    public ArrayList<Component> components = new ArrayList<>();
 
     private final String title;
     public AbstractOptionPanel(String title) {
         this.title = title;
+        initComponents();
+        initLayout();
         setBorder(BorderFactory.createLineBorder(Color.darkGray));
         Processing.getOptionPanels().add(this);
     }
 
-    public void initLayout(Component... components) {
+    public void initLayout() {
         JPanel options = new JPanel();
         options.setLayout(new FlowLayout(FlowLayout.LEADING));
-        Arrays.stream(components).forEach(options::add);
+        components.forEach(options::add);
 
         JLabel titleLabel = new JLabel("  " + title + "  ");
         titleLabel.setFont(titleLabel.getFont().deriveFont(Font.BOLD).deriveFont(14f));
@@ -40,6 +44,8 @@ public abstract class AbstractOptionPanel extends JPanel {
 
         setLayout(layout);
     }
+
+    public abstract void initComponents();
     public abstract void setOptionFromConfig();
 
 }

@@ -12,4 +12,8 @@ public class Processing {
     public static List<AbstractOptionPanel> optionPanels = new ArrayList<>();
     public static Config config = new DefaultConfig();
 
+    public static void updatePanelOptions() {
+        optionPanels.forEach(AbstractOptionPanel::setOptionFromConfig);
+    }
+
 }

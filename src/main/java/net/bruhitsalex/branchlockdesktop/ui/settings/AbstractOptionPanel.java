@@ -8,7 +8,6 @@ public abstract class AbstractOptionPanel extends JPanel {
 
     public AbstractOptionPanel() {
         Processing.optionPanels.add(this);
-        setOptionFromConfig();
     }
 
     public abstract void setOptionFromConfig();

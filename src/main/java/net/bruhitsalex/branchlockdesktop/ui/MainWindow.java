@@ -1,5 +1,6 @@
 package net.bruhitsalex.branchlockdesktop.ui;
 
+import net.bruhitsalex.branchlockdesktop.processing.Processing;
 import net.bruhitsalex.branchlockdesktop.ui.processing.ProcessingPane;
 import net.bruhitsalex.branchlockdesktop.ui.settings.ConfigPane;
 import net.bruhitsalex.branchlockdesktop.ui.utils.UIUtils;
@@ -27,6 +28,7 @@ public class MainWindow extends JFrame {
         setSize(new Dimension(1280, 720));
         setPreferredSize(new Dimension(1280, 720));
         initComponents();
+        Processing.updatePanelOptions();
 
         UIUtils.centreWindow(this);
         pack();

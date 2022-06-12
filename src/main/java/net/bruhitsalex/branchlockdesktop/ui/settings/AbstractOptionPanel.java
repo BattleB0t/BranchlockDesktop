@@ -7,7 +7,7 @@ import javax.swing.*;
 public abstract class AbstractOptionPanel extends JPanel {
 
     public AbstractOptionPanel() {
-        Processing.optionPanels.add(this);
+        Processing.getOptionPanels().add(this);
     }
 
     public abstract void setOptionFromConfig();

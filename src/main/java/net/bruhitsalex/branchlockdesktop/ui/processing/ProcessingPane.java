@@ -40,7 +40,7 @@ public class ProcessingPane extends JPanel {
                         .addGap(20, 20, 20)
                         .addComponent(secondSplitter)
                         .addGap(20, 20, 20)
-                        .addComponent(actionPane, 0, GroupLayout.PREFERRED_SIZE, 100)
+                        .addComponent(actionPane, 80, GroupLayout.PREFERRED_SIZE, 100)
         );
 
         layout.setHorizontalGroup(

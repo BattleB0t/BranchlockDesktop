@@ -46,13 +46,13 @@ public class JarIOPane extends JPanel {
                                         .addComponent(input.getLabel())
                                         .addComponent(output.getLabel())
                         )
-                        .addGap(20, 20, 20)
+                        .addGap(10, 10, 10)
                         .addGroup(
                                 layout.createParallelGroup()
                                         .addComponent(input.getPath())
                                         .addComponent(output.getPath())
                         )
-                        .addGap(20, 20, 20)
+                        .addGap(5, 5, 5)
                         .addGroup(
                                 layout.createParallelGroup()
                                         .addComponent(input.getButton())

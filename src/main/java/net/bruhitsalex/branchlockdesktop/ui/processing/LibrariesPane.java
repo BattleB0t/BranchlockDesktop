@@ -10,6 +10,7 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,6 +29,7 @@ public class LibrariesPane extends JPanel {
         label = new JLabel("Libraries");
         add = new JButton("Add");
         remove = new JButton("Remove");
+        remove.setEnabled(false);
         tree = new JTree(root = new DefaultMutableTreeNode("0 libraries added"));
         initActions();
         initLayout();
@@ -44,6 +46,20 @@ public class LibrariesPane extends JPanel {
                     addLibrary(file);
                 }
             }
+        });
+
+        tree.addTreeSelectionListener(e -> remove.setEnabled(tree.getSelectionPaths() != null));
+
+        remove.addActionListener(e -> {
+            if (tree.getSelectionPaths() == null) {
+                return;
+            }
+
+            for (TreePath treePath : tree.getSelectionPaths()) {
+                removeLibrary(treePath);
+            }
+
+            reloadTreeUI();
         });
     }
 
@@ -108,6 +124,28 @@ public class LibrariesPane extends JPanel {
 
         newOrFoundChild.add(new JarTreeNode(file));
 
+        reloadTreeUI();
+    }
+
+    private void removeLibrary(TreePath treePath) {
+        DefaultMutableTreeNode defaultMutableTreeNode = (DefaultMutableTreeNode) treePath.getLastPathComponent();
+        if (defaultMutableTreeNode.isRoot()) {
+            return;
+        }
+
+        if (defaultMutableTreeNode instanceof JarTreeNode) {
+            JarTreeNode jarTreeNode = (JarTreeNode) defaultMutableTreeNode;
+            PathTreeNode pathTreeNode = (PathTreeNode) jarTreeNode.getParent();
+            pathTreeNode.remove(jarTreeNode);
+            if (pathTreeNode.getChildCount() <= 0) {
+                root.remove(pathTreeNode);
+            }
+        } else if (defaultMutableTreeNode instanceof PathTreeNode) {
+            root.remove(defaultMutableTreeNode);
+        }
+    }
+
+    private void reloadTreeUI() {
         root.setUserObject(getAllLibraries().size() + " libraries added");
         ((DefaultTreeModel) tree.getModel()).reload(root);
         UIUtils.expandAllNodes(tree);

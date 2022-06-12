@@ -7,15 +7,17 @@ import net.bruhitsalex.branchlockdesktop.ui.impl.SwingFileIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
-import java.io.File;
 
 @Getter
 public class JarIOPane extends JPanel {
+
+    public static JarIOPane INSTANCE;
 
     private final SwingFileIO input;
     private final SwingFileIO output;
 
     public JarIOPane() {
+        INSTANCE = this;
         input = new SwingFileIO("Input Jar");
         output = new SwingFileIO("Output Jar");
         setMaximumSize(new Dimension(Short.MAX_VALUE, 28));
@@ -32,6 +34,7 @@ public class JarIOPane extends JPanel {
             if (result == JFileChooser.APPROVE_OPTION) {
                 input.getPath().setText(inputFileChooser.getSelectedFile().getAbsolutePath());
             }
+            ActionPane.INSTANCE.checkProcessValidity();
         });
 
         JFileChooser outputFileChooser = new NativeJFileChooser();
@@ -43,6 +46,7 @@ public class JarIOPane extends JPanel {
             if (result == JFileChooser.APPROVE_OPTION) {
                 output.getPath().setText(outputFileChooser.getSelectedFile().getAbsolutePath());
             }
+            ActionPane.INSTANCE.checkProcessValidity();
         });
     }
 

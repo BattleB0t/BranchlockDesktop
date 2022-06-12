@@ -7,11 +7,14 @@ import java.awt.*;
 
 public class ActionPane extends JPanel {
 
+    public static ActionPane INSTANCE;
+
     private final JButton processButton;
     private final JProgressBar progressBar;
     private final JTextArea statusTextArea;
 
     public ActionPane() {
+        INSTANCE = this;
         processButton = new JButton("Process");
         processButton.setIcon(new FlatSVGIcon("images/execute.svg"));
         processButton.setEnabled(false);
@@ -48,6 +51,13 @@ public class ActionPane extends JPanel {
         );
 
         setLayout(layout);
+    }
+
+    public void checkProcessValidity() {
+        processButton.setEnabled(
+                !JarIOPane.INSTANCE.getInput().getPath().getText().isEmpty()
+                && !JarIOPane.INSTANCE.getOutput().getPath().getText().isEmpty()
+        );
     }
 
 }

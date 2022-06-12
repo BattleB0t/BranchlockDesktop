@@ -3,6 +3,7 @@ package net.bruhitsalex.branchlockdesktop.ui.processing;
 import com.formdev.flatlaf.extras.FlatSVGIcon;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ActionPane extends JPanel {
 
@@ -11,11 +12,13 @@ public class ActionPane extends JPanel {
     private final JTextArea statusTextArea;
 
     public ActionPane() {
-        processButton = new JButton("Process"); // new FlatSVGIcon("com/formdev/flatlaf/demo/extras/svg/actions/execute.svg")
+        processButton = new JButton("Process");
         processButton.setIcon(new FlatSVGIcon("images/execute.svg"));
+        processButton.setEnabled(false);
         progressBar = new JProgressBar();
-        progressBar.setSize(progressBar.getWidth(), processButton.getHeight());
+        progressBar.setMinimumSize(new Dimension(progressBar.getWidth(), 8));
         statusTextArea = new JTextArea("Waiting...");
+        statusTextArea.setEditable(false);
         initLayout();
     }
 
@@ -39,7 +42,7 @@ public class ActionPane extends JPanel {
                         .addGroup(
                                 layout.createSequentialGroup()
                                         .addComponent(processButton)
-                                        .addGap(20, 20, 20)
+                                        .addGap(10, 10, 10)
                                         .addComponent(progressBar)
                         )
         );

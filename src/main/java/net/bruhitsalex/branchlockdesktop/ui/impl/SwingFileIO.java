@@ -1,10 +1,8 @@
 package net.bruhitsalex.branchlockdesktop.ui.impl;
 
-import darrylbu.icon.StretchIcon;
 import lombok.Getter;
 
 import javax.swing.*;
-import java.awt.*;
 
 @Getter
 public class SwingFileIO {
@@ -19,7 +17,7 @@ public class SwingFileIO {
         path = new JTextField("");
         path.setEditable(false);
         button = new JButton();
-        button.setIcon(new StretchIcon(getClass().getClassLoader().getResource("images/folder.png")));
+        button.setIcon(UIManager.getIcon("Tree.closedIcon"));
     }
 
 }

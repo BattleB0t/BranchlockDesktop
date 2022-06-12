@@ -1,8 +1,11 @@
 package net.bruhitsalex.branchlockdesktop.ui.settings;
 
+import lombok.Getter;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
+@Getter
 public class ConfigPane extends JPanel {
 
     private final TasksPane tasksPane;
@@ -25,6 +28,8 @@ public class ConfigPane extends JPanel {
                 layout.createParallelGroup()
                         .addComponent(tasksPane)
         );
+
+        setLayout(layout);
     }
 
 }

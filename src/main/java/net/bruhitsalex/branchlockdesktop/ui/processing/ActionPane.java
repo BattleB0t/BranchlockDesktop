@@ -1,5 +1,7 @@
 package net.bruhitsalex.branchlockdesktop.ui.processing;
 
+import com.formdev.flatlaf.extras.FlatSVGIcon;
+
 import javax.swing.*;
 
 public class ActionPane extends JPanel {
@@ -9,7 +11,8 @@ public class ActionPane extends JPanel {
     private final JTextArea statusTextArea;
 
     public ActionPane() {
-        processButton = new JButton("Process");
+        processButton = new JButton("Process"); // new FlatSVGIcon("com/formdev/flatlaf/demo/extras/svg/actions/execute.svg")
+        processButton.setIcon(new FlatSVGIcon("images/execute.svg"));
         progressBar = new JProgressBar();
         progressBar.setSize(progressBar.getWidth(), processButton.getHeight());
         statusTextArea = new JTextArea("Waiting...");

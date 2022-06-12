@@ -7,8 +7,6 @@ import lombok.Data;
 @Data
 public class Config {
 
-    // oop hell
-
     private GlobalSettings globalSettings;
     private Tasks tasks;
     private ObfuscationRanges obfuscationRanges;

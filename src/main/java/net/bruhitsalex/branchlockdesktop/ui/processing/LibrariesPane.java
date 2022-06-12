@@ -1,5 +1,6 @@
 package net.bruhitsalex.branchlockdesktop.ui.processing;
 
+import com.formdev.flatlaf.extras.FlatSVGIcon;
 import li.flor.nativejfilechooser.NativeJFileChooser;
 import lombok.Getter;
 import net.bruhitsalex.branchlockdesktop.ui.custom.JarTreeNode;
@@ -28,7 +29,9 @@ public class LibrariesPane extends JPanel {
     public LibrariesPane() {
         label = new JLabel("Libraries");
         add = new JButton("Add");
+        add.setIcon(new FlatSVGIcon("images/add.svg"));
         remove = new JButton("Remove");
+        remove.setIcon(new FlatSVGIcon("images/remove.svg"));
         remove.setEnabled(false);
         tree = new JTree(root = new DefaultMutableTreeNode("0 libraries added"));
         initActions();

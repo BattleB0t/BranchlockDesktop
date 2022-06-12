@@ -4,6 +4,7 @@ import lombok.Getter;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import java.awt.*;
 
 @Getter
 public class ConfigPane extends JPanel {
@@ -19,13 +20,19 @@ public class ConfigPane extends JPanel {
     private void initLayout() {
         GroupLayout layout = new GroupLayout(this);
 
+        JLabel tasksLabel = new JLabel(" Tasks");
+        tasksLabel.setFont(new Font(tasksLabel.getFont().getFontName(), Font.BOLD, 18));
+
         layout.setVerticalGroup(
                 layout.createSequentialGroup()
+                        .addComponent(tasksLabel)
+                        .addGap(5, 5, 5)
                         .addComponent(tasksPane)
         );
 
         layout.setHorizontalGroup(
                 layout.createParallelGroup()
+                        .addComponent(tasksLabel)
                         .addComponent(tasksPane)
         );
 

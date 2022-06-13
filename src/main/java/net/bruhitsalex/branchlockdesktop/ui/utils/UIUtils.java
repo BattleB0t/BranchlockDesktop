@@ -7,8 +7,8 @@ public class UIUtils {
 
     public static void centreWindow(JFrame frame) {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (int) ((dimension.getWidth() - 800) / 2);
-        int y = (int) ((dimension.getHeight() - 500) / 2) - 50;
+        int x = (int) ((dimension.getWidth() - frame.getWidth()) / 2);
+        int y = (int) ((dimension.getHeight() - frame.getHeight()) / 2) - 50;
         frame.setLocation(x, y);
     }
 

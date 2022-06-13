@@ -6,14 +6,14 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 @Getter
-public class ConfigPane extends JTabbedPane {
+public class SettingsConfigOutputPane extends JTabbedPane {
 
     private final GlobalPane globalPane;
     private final TasksPane tasksPane;
     private final ObfuscationRangesPane obfuscationRangesPane;
     private final LogPane logPane;
 
-    public ConfigPane() {
+    public SettingsConfigOutputPane() {
         setBorder(new EmptyBorder(20, 20, 20, 20));
         globalPane = new GlobalPane();
         tasksPane = new TasksPane();

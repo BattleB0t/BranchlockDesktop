@@ -2,8 +2,8 @@ package net.bruhitsalex.branchlockdesktop.ui;
 
 import net.bruhitsalex.branchlockdesktop.processing.Processing;
 import net.bruhitsalex.branchlockdesktop.ui.processing.ProcessingPane;
-import net.bruhitsalex.branchlockdesktop.ui.settings.ConfigPane;
 import net.bruhitsalex.branchlockdesktop.ui.settings.LogPane;
+import net.bruhitsalex.branchlockdesktop.ui.settings.SettingsConfigOutputPane;
 import net.bruhitsalex.branchlockdesktop.ui.utils.UIUtils;
 
 import javax.imageio.ImageIO;
@@ -14,7 +14,7 @@ public class MainWindow extends JFrame {
 
     private JPanel mainPanel;
     private ProcessingPane proccessingPane;
-    private ConfigPane configPane;
+    private SettingsConfigOutputPane settingsConfigOutputPane;
 
     public MainWindow() {
         setTitle("Branchlock Desktop");
@@ -48,8 +48,8 @@ public class MainWindow extends JFrame {
 
         proccessingPane = new ProcessingPane();
         splitPane.setLeftComponent(proccessingPane);
-        configPane = new ConfigPane();
-        splitPane.setRightComponent(configPane);
+        settingsConfigOutputPane = new SettingsConfigOutputPane();
+        splitPane.setRightComponent(settingsConfigOutputPane);
 
         mainPanel.add(splitPane, BorderLayout.CENTER);
     }

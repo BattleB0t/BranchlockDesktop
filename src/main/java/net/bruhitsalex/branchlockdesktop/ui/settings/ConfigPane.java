@@ -27,8 +27,7 @@ public class ConfigPane extends JTabbedPane {
         JScrollPane globalScroller = new JScrollPane(globalPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         add("Global Settings", globalScroller);
 
-        JScrollPane obfRangesScroller = new JScrollPane(obfuscationRangesPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        add("Obfuscation Ranges", obfRangesScroller);
+        add("Obfuscation Ranges", obfuscationRangesPane);
     }
 
 }

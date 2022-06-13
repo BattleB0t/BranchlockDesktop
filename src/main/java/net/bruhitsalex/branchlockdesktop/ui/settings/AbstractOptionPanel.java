@@ -10,6 +10,7 @@ public abstract class AbstractOptionPanel extends JPanel {
 
     public ArrayList<JComponent> components = new ArrayList<>();
 
+    private int baseline = 100;
     private final String title;
     public AbstractOptionPanel(String title) {
         this.title = title;
@@ -51,5 +52,14 @@ public abstract class AbstractOptionPanel extends JPanel {
 
     public abstract void initComponents();
     public abstract void setOptionFromConfig();
+
+    @Override
+    public int getBaseline(int width, int height) {
+        return Math.max(super.getBaseline(width, height), baseline);
+    }
+
+    public void setAbstractBaseline(int baseline) {
+        this.baseline = baseline;
+    }
 
 }

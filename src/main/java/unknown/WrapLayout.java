@@ -1,7 +1,11 @@
 package unknown;
 
+import net.bruhitsalex.branchlockdesktop.ui.settings.AbstractOptionPanel;
+
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *  FlowLayout subclass that fully supports wrapping of components.
@@ -119,18 +123,17 @@ public class WrapLayout extends FlowLayout
 
             int nmembers = target.getComponentCount();
 
-            for (int i = 0; i < nmembers; i++)
-            {
+            List<AbstractOptionPanel> lastPanels = new ArrayList<>();
+            for (int i = 0; i < nmembers; i++) {
                 Component m = target.getComponent(i);
+                lastPanels.add((AbstractOptionPanel) m);
 
-                if (m.isVisible())
-                {
+                if (m.isVisible()) {
                     Dimension d = preferred ? m.getPreferredSize() : m.getMinimumSize();
 
                     //  Can't add the component to current row. Start a new row.
 
-                    if (rowWidth + d.width > maxWidth)
-                    {
+                    if (rowWidth + d.width > maxWidth) {
                         addRow(dim, rowWidth, rowHeight);
                         rowWidth = 0;
                         rowHeight = 0;
@@ -149,6 +152,10 @@ public class WrapLayout extends FlowLayout
             }
 
             addRow(dim, rowWidth, rowHeight);
+            int finalRowHeight1 = rowHeight;
+            lastPanels.forEach(abstractOptionPanel -> {
+                abstractOptionPanel.setAbstractBaseline(finalRowHeight1);
+            });
 
             dim.width += horizontalInsetsAndGap;
             dim.height += insets.top + insets.bottom + vgap * 2;

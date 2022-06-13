@@ -8,23 +8,26 @@ import java.util.ArrayList;
 
 public abstract class AbstractOptionPanel extends JPanel {
 
-    public ArrayList<Component> components = new ArrayList<>();
+    public ArrayList<JComponent> components = new ArrayList<>();
 
     private final String title;
     public AbstractOptionPanel(String title) {
         this.title = title;
         initComponents();
         initLayout();
-        setBorder(BorderFactory.createLineBorder(Color.darkGray));
+        //setBorder(BorderFactory.createLineBorder(Color.darkGray));
         Processing.getOptionPanels().add(this);
     }
 
     public void initLayout() {
         JPanel options = new JPanel();
-        options.setLayout(new FlowLayout(FlowLayout.LEADING));
-        components.forEach(options::add);
+        options.setLayout(new BoxLayout(options, BoxLayout.Y_AXIS));
+        components.forEach(jComponent -> {
+            jComponent.setAlignmentX(Component.LEFT_ALIGNMENT);
+            options.add(jComponent);
+        });
 
-        JLabel titleLabel = new JLabel("  " + title + "  ");
+        JLabel titleLabel = new JLabel(title);
         titleLabel.setFont(titleLabel.getFont().deriveFont(Font.BOLD).deriveFont(14f));
 
         GroupLayout layout = new GroupLayout(this);
@@ -33,11 +36,12 @@ public abstract class AbstractOptionPanel extends JPanel {
                 layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(titleLabel)
+                        .addGap(2, 2, 2)
                         .addComponent(options)
         );
 
         layout.setHorizontalGroup(
-                layout.createParallelGroup()
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addComponent(titleLabel)
                         .addComponent(options)
         );

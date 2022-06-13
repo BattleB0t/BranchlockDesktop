@@ -5,6 +5,7 @@ import lombok.Setter;
 import net.bruhitsalex.branchlockdesktop.processing.config.Config;
 import net.bruhitsalex.branchlockdesktop.processing.config.DefaultConfig;
 import net.bruhitsalex.branchlockdesktop.ui.settings.AbstractOptionPanel;
+import net.bruhitsalex.branchlockdesktop.ui.settings.ObfuscationRangesPane;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,7 @@ public class Processing {
 
     public static void updatePanelOptions() {
         optionPanels.forEach(AbstractOptionPanel::setOptionFromConfig);
+        ObfuscationRangesPane.INSTANCE.setOptionFromConfig();
     }
 
 }

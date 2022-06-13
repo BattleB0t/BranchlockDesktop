@@ -12,6 +12,7 @@ public class SettingsConfigOutputPane extends JTabbedPane {
     private final TasksPane tasksPane;
     private final ObfuscationRangesPane obfuscationRangesPane;
     private final LogPane logPane;
+    private final ConfigPane configPane;
 
     public SettingsConfigOutputPane() {
         setBorder(new EmptyBorder(20, 20, 20, 20));
@@ -19,6 +20,7 @@ public class SettingsConfigOutputPane extends JTabbedPane {
         tasksPane = new TasksPane();
         obfuscationRangesPane = new ObfuscationRangesPane();
         logPane = new LogPane();
+        configPane = new ConfigPane();
         initLayout();
     }
 
@@ -33,6 +35,8 @@ public class SettingsConfigOutputPane extends JTabbedPane {
 
         JScrollPane logScroller = new JScrollPane(logPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         add("Output Log", logScroller);
+
+        add("Configurations", configPane);
     }
 
 }

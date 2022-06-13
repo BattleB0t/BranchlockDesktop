@@ -10,6 +10,7 @@ public class TasksPane extends JPanel {
 
     public TasksPane() {
         WrapLayout flowLayout = new WrapLayout(FlowLayout.LEFT, 20, 10);
+        flowLayout.setAlignOnBaseline(true);
         setLayout(flowLayout);
         add(new TrimmerPane());
         add(new StacktraceEncryptionPane());

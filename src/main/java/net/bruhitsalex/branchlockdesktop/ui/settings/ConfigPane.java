@@ -11,12 +11,14 @@ public class ConfigPane extends JTabbedPane {
     private final GlobalPane globalPane;
     private final TasksPane tasksPane;
     private final ObfuscationRangesPane obfuscationRangesPane;
+    private final LogPane logPane;
 
     public ConfigPane() {
         setBorder(new EmptyBorder(20, 20, 20, 20));
         globalPane = new GlobalPane();
         tasksPane = new TasksPane();
         obfuscationRangesPane = new ObfuscationRangesPane();
+        logPane = new LogPane();
         initLayout();
     }
 
@@ -28,6 +30,9 @@ public class ConfigPane extends JTabbedPane {
         add("Global Settings", globalScroller);
 
         add("Obfuscation Ranges", obfuscationRangesPane);
+
+        JScrollPane logScroller = new JScrollPane(logPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        add("Output Log", logScroller);
     }
 
 }

@@ -3,6 +3,7 @@ package net.bruhitsalex.branchlockdesktop.ui;
 import net.bruhitsalex.branchlockdesktop.processing.Processing;
 import net.bruhitsalex.branchlockdesktop.ui.processing.ProcessingPane;
 import net.bruhitsalex.branchlockdesktop.ui.settings.ConfigPane;
+import net.bruhitsalex.branchlockdesktop.ui.settings.LogPane;
 import net.bruhitsalex.branchlockdesktop.ui.utils.UIUtils;
 
 import javax.imageio.ImageIO;
@@ -28,9 +29,11 @@ public class MainWindow extends JFrame {
         setSize(new Dimension(1280, 720));
         setPreferredSize(new Dimension(1280, 720));
         initComponents();
+        LogPane.addLine(LogPane.Type.GUI, "UI created.");
         Processing.updatePanelOptions();
 
         UIUtils.centreWindow(this);
+        LogPane.addLine(LogPane.Type.GUI, "Window opened.");
         pack();
     }
 

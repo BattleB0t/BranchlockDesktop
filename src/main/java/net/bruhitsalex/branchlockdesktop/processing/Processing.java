@@ -2,8 +2,8 @@ package net.bruhitsalex.branchlockdesktop.processing;
 
 import lombok.Getter;
 import lombok.Setter;
-import net.bruhitsalex.branchlockdesktop.processing.config.Config;
-import net.bruhitsalex.branchlockdesktop.processing.config.DefaultConfig;
+import net.bruhitsalex.branchlockdesktop.processing.obfsettings.Config;
+import net.bruhitsalex.branchlockdesktop.processing.obfsettings.DefaultConfig;
 import net.bruhitsalex.branchlockdesktop.ui.settings.AbstractOptionPanel;
 import net.bruhitsalex.branchlockdesktop.ui.settings.LogPane;
 import net.bruhitsalex.branchlockdesktop.ui.settings.obfranges.ObfuscationRangesTree;

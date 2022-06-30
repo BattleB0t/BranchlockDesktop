@@ -1,7 +1,6 @@
-package net.bruhitsalex.branchlockdesktop.processing.config;
+package net.bruhitsalex.branchlockdesktop.processing.obfsettings;
 
 import java.security.SecureRandom;
-import java.util.List;
 
 public class ConfigUtils {
 

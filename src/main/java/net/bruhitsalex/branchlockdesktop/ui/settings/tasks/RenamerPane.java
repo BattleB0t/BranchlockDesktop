@@ -1,7 +1,7 @@
 package net.bruhitsalex.branchlockdesktop.ui.settings.tasks;
 
 import net.bruhitsalex.branchlockdesktop.processing.Processing;
-import net.bruhitsalex.branchlockdesktop.processing.obfsettings.Renamer;
+import net.bruhitsalex.branchlockdesktop.processing.config.tasks.Renamer;
 import net.bruhitsalex.branchlockdesktop.ui.settings.AbstractOptionPanel;
 
 import javax.swing.*;

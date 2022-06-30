@@ -1,4 +1,4 @@
-package net.bruhitsalex.branchlockdesktop.processing.obfsettings;
+package net.bruhitsalex.branchlockdesktop.processing.utils;
 
 import java.security.SecureRandom;
 

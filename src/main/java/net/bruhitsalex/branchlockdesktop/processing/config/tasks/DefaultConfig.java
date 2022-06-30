@@ -1,4 +1,8 @@
-package net.bruhitsalex.branchlockdesktop.processing.obfsettings;
+package net.bruhitsalex.branchlockdesktop.processing.config.tasks;
+
+import net.bruhitsalex.branchlockdesktop.processing.config.Config;
+import net.bruhitsalex.branchlockdesktop.processing.config.GlobalSettings;
+import net.bruhitsalex.branchlockdesktop.processing.utils.ConfigUtils;
 
 import java.util.ArrayList;
 

@@ -1,8 +1,8 @@
 package net.bruhitsalex.branchlockdesktop.ui.settings.tasks;
 
 import net.bruhitsalex.branchlockdesktop.processing.Processing;
-import net.bruhitsalex.branchlockdesktop.processing.obfsettings.ConfigUtils;
-import net.bruhitsalex.branchlockdesktop.processing.obfsettings.StacktraceEncryption;
+import net.bruhitsalex.branchlockdesktop.processing.config.tasks.StacktraceEncryption;
+import net.bruhitsalex.branchlockdesktop.processing.utils.ConfigUtils;
 import net.bruhitsalex.branchlockdesktop.ui.settings.AbstractOptionPanel;
 
 import javax.swing.*;

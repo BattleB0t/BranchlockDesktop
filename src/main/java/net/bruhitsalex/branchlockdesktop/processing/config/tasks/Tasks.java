@@ -1,4 +1,4 @@
-package net.bruhitsalex.branchlockdesktop.processing.obfsettings;
+package net.bruhitsalex.branchlockdesktop.processing.config.tasks;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

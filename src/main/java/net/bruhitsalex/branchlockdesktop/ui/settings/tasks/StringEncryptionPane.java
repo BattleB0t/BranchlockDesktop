@@ -1,6 +1,6 @@
 package net.bruhitsalex.branchlockdesktop.ui.settings.tasks;
 
-import net.bruhitsalex.branchlockdesktop.processing.obfsettings.StringEncryption;
+import net.bruhitsalex.branchlockdesktop.processing.config.tasks.StringEncryption;
 import net.bruhitsalex.branchlockdesktop.ui.settings.AbstractOptionPanel;
 
 import javax.swing.*;

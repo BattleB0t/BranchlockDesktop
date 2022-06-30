@@ -1,7 +1,7 @@
 package net.bruhitsalex.branchlockdesktop.ui.settings.tasks;
 
 import net.bruhitsalex.branchlockdesktop.processing.Processing;
-import net.bruhitsalex.branchlockdesktop.processing.obfsettings.ControlFlowObfuscation;
+import net.bruhitsalex.branchlockdesktop.processing.config.tasks.ControlFlowObfuscation;
 import net.bruhitsalex.branchlockdesktop.ui.settings.AbstractOptionPanel;
 
 import javax.swing.*;

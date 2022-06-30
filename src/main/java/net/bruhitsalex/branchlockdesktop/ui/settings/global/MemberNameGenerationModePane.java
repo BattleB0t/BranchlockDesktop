@@ -1,7 +1,7 @@
 package net.bruhitsalex.branchlockdesktop.ui.settings.global;
 
 import net.bruhitsalex.branchlockdesktop.processing.Processing;
-import net.bruhitsalex.branchlockdesktop.processing.obfsettings.GlobalSettings;
+import net.bruhitsalex.branchlockdesktop.processing.config.GlobalSettings;
 import net.bruhitsalex.branchlockdesktop.ui.settings.AbstractOptionPanel;
 
 import javax.swing.*;

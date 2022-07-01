@@ -1,6 +1,7 @@
 package net.bruhitsalex.branchlockdesktop.processing.config.tasks;
 
 import net.bruhitsalex.branchlockdesktop.processing.config.Config;
+import net.bruhitsalex.branchlockdesktop.processing.config.Dependencies;
 import net.bruhitsalex.branchlockdesktop.processing.config.GlobalSettings;
 import net.bruhitsalex.branchlockdesktop.processing.utils.ConfigUtils;
 
@@ -34,7 +35,9 @@ public class DefaultConfig extends Config {
                 new ObfuscationRanges(
                         new ArrayList<>(),
                         new ArrayList<>()
-                )
+                ),
+                new Dependencies(),
+                null, null
         );
     }
 

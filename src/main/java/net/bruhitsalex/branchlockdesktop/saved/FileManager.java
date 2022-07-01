@@ -33,6 +33,7 @@ public class FileManager {
             scriptsFolder.mkdirs();
             LogPane.addLine(LogPane.Type.INIT, "Created folder: " + scriptsFolder.getAbsolutePath());
         }
+        ScriptsManager.init(scriptsFolder);
     }
 
     private static void checkAppSettings() {

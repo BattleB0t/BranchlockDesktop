@@ -1,12 +1,11 @@
 package net.bruhitsalex.branchlockdesktop.saved;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import net.bruhitsalex.branchlockdesktop.ui.settings.LogPane;
-import org.yaml.snakeyaml.Yaml;
 
 import javax.swing.*;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileManager {
@@ -45,7 +44,9 @@ public class FileManager {
 
         AppSettings appSettings = null;
         try {
-            appSettings = new Yaml().load(new FileReader(appSettingsFile));
+            ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+            mapper.findAndRegisterModules();
+            appSettings = mapper.readValue(appSettingsFile, AppSettings.class);
         } catch (IOException e) {
             showIOIssue(appSettingsFile, e);
         }
@@ -68,9 +69,10 @@ public class FileManager {
 
         AppSettings appSettings = new AppSettings();
         appSettings.setDarkMode(true);
-        Yaml yaml = new Yaml();
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+        mapper.findAndRegisterModules();
         try {
-            yaml.dump(appSettings, new FileWriter(appSettingsFile));
+            mapper.writeValue(appSettingsFile, appSettings);
         } catch (IOException e) {
             showIOIssue(appSettingsFile, e);
         }

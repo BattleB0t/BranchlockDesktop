@@ -2,9 +2,11 @@ package net.bruhitsalex.branchlockdesktop.processing.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @Data
+@NoArgsConstructor
 public class GlobalSettings {
 
     private MemberNameGenerationMode memberNameGenerationMode = MemberNameGenerationMode.ADAPTIVE;

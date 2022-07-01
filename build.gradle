@@ -18,5 +18,5 @@ dependencies {
     implementation 'com.formdev:flatlaf-intellij-themes:2.3'
     implementation 'li.flor:native-j-file-chooser:1.6.4'
     implementation 'com.formdev:flatlaf-extras:2.3'
-    implementation 'org.yaml:snakeyaml:1.30'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.3'
 }

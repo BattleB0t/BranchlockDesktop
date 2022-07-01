@@ -1,15 +1,15 @@
 package net.bruhitsalex.branchlockdesktop.saved;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import lombok.Getter;
 import net.bruhitsalex.branchlockdesktop.processing.Processing;
 import net.bruhitsalex.branchlockdesktop.processing.config.Config;
-import org.yaml.snakeyaml.Yaml;
 
 import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,8 +41,9 @@ public class ScriptsManager {
         }
 
         try {
-            Yaml yaml = new Yaml();
-            yaml.dump(config, new FileWriter(file));
+            ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+            mapper.findAndRegisterModules();
+            mapper.writeValue(file, config);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Unable to save script: " + file.getAbsolutePath());
             System.exit(-1);
@@ -57,11 +58,14 @@ public class ScriptsManager {
         }
 
         for (File file : found) {
-            Yaml yaml = new Yaml();
+            ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+            mapper.findAndRegisterModules();
             try {
-                Config config = yaml.loadAs(new FileReader(file), Config.class);
+                Config config = mapper.readValue(file, Config.class);
                 allConfigs.add(config);
-            } catch (FileNotFoundException ignored) {}
+            } catch (FileNotFoundException ignored) {} catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
